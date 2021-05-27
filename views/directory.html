@@ -1,0 +1,35 @@
+<div class="content">
+  <h1 style="text-align: center;">List of teams</h1>
+
+  <div id="search-bar">
+    <input type="text" ng-model="search" placeholder="Search for a team"/>
+  
+    <button ng-click="order= 'name'">Order by Name</button>
+    <button ng-click="order= 'color'">Order by Color</button>
+  </div>
+  
+  
+  <div class="subtitle">
+    <h5 style="float: left;">Team - Titles</h5>
+    <h5 style="float: right; margin-right: 3%;">Team Colors</h5>
+  </div>
+
+  <ul id="team-list">
+    <li ng-repeat="team in teams | orderBy: order | filter: search" ng-show="team.available">
+      <img ng-src="{{team.logo}}" style="margin: -12px 10px 0 0; float: left; width: 40px;" ng-show="team.logo" alt="{{team.name}} logo"/>
+      <h3>{{team.name}} - {{team.titles}}</h3>
+      <div class="remove" ng-click="removeTeam(team)">x</div>
+      <span class="team-color" style="background-image: linear-gradient(to bottom right, {{team.color[0]}}, {{team.color[1]}})">
+        {{team.color[0]}} & {{team.color[1]}}
+      </span>
+    </li>
+  </ul>
+  <form ng-submit="addTeam()" name="addTeam">
+    <input type="text" placeholder="Name" ng-model="newTeam.name" ng-required="true" />
+    <input type="text" placeholder="Color 1" ng-model="newTeam.color1" ng-required="true" />
+    <input type="text" placeholder="Color 2" ng-model="newTeam.color2" ng-required="true" />
+    <input type="number" placeholder="Titles" ng-model="newTeam.titles" ng-required="true" />
+    <input type="submit" value="Add new team" ng-disabled="addTeam.$invalid"/>
+  </form>
+  <button ng-click="removeAll()" >Remove All Teams</button>
+</div>

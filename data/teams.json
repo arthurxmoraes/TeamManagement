@@ -1,0 +1,28 @@
+[{
+    "name": "Flamengo",
+    "color": ["Red", "Black"],
+    "titles": 8,
+    "available": true,
+    "logo": "content/img/Flamengo.png"
+},
+{
+    "name": "Corinthians",
+    "color": ["Black", "White"],
+    "titles": 5,
+    "available": true,
+    "logo": "content/img/Corinthians.png"
+},
+{
+    "name": "Palmeiras",
+    "color": ["Green", "White"],
+    "titles": 6,
+    "available": true,
+    "logo": "content/img/Palmeiras.png"
+},
+{
+    "name": "Remo",
+    "color": ["DarkBlue", "White"],
+    "titles": 1,
+    "available": true,
+    "logo": "content/img/Remo.png"
+}]
